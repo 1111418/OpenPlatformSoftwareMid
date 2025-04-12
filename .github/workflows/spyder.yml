@@ -1,27 +1,27 @@
 name: Run py
 
 on: 
-	workflow_dispatch:
-	schedule:
-		- cron: ‘0 0 * * *’
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 jobs:
-	run-py:
-		run-on: ubuntu-latest
+  run-py:
+    run-on: ubuntu-latest
 
-		steps:
-		-name:  Checkout repository
-			uses: actions/checkout@v3
+    steps:
+    -name:  Checkout repository
+      uses: actions/checkout@v3
 
-		-name: Set up Python
-			uses: actions/setup-python@v4
-			with:
-				python-version: ‘3.10’
+    -name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ‘3.10’
 
-		-name: Install dependencies
-			run: pip install requests pandas beautifulsoup4
+    -name: Install dependencies
+      run: pip install requests pandas beautifulsoup4
 
-		-name: Run static.py
-			run: python static.py
+    -name: Run static.py
+      run: python static.py
 		
-		-name: Run api.py
-			run: python api.py
+    -name: Run api.py
+      run: python api.py
