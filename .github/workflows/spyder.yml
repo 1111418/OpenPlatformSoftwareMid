@@ -3,7 +3,7 @@ name: Run py
 on: 
 	workflow_dispatch:
 	schedule:
-		-cron: ‘0 0 * * *’
+		- cron: ‘0 0 * * *’
 jobs:
 	run-py:
 		run-on: ubuntu-latest
