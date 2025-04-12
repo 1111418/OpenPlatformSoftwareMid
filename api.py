@@ -17,12 +17,12 @@ response = requests.get(url)
 
 dic = response.json() #轉成字典
 records = dic["records"] #從字典裡把records欄位的內容抓出來
-taget_sitename = ["中山", "林口", "中壢"] #目標區域
+target_sitename = ["中山", "林口", "中壢"] #目標區域
 data = [] #空list 存過濾結果
 
 #迴圈查詢目標區域，加入list作為輸出
 for record in records:
-    if record["sitename"] in taget_sitename:
+    if record["sitename"] in target_sitename:
         data.append({
             "日期： ":record["monitordate"],
             "區域： ":record["sitename"],
